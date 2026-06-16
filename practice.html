@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Gym</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+}
+
+/* HEADER */
+.header{
+    background:#111827;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+.nav{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+/* HERO */
+.hero{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h2{
+    font-size:40px;
+}
+
+.hero button{
+    margin-top:15px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* SECTIONS */
+section{
+    width:80%;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:#eff6ff;
+    padding:20px;
+    width:200px;
+    text-align:center;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+.footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .nav{
+        flex-direction:column;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+
+    section{
+        width:95%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Power Gym</h1>
+
+    <ul class="nav">
+        <li>Home</li>
+        <li>About</li>
+        <li>Plans</li>
+        <li>Trainers</li>
+        <li>Contact</li>
+    </ul>
+</header>
+
+<section class="hero">
+    <h2>Build Your Dream Body</h2>
+    <p>Join the best fitness center in town</p>
+    <button>Join Now</button>
+</section>
+
+<section>
+    <h2>About Us</h2>
+    <p>We help people achieve fitness goals with expert trainers and modern equipment.</p>
+</section>
+
+<section>
+    <h2>Membership Plans</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Basic</h3>
+            <p>$20/month</p>
+        </div>
+
+        <div class="card">
+            <h3>Standard</h3>
+            <p>$40/month</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <p>$60/month</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Trainers</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Ahmed</h3>
+            <p>Coach</p>
+        </div>
+
+        <div class="card">
+            <h3>Ali</h3>
+            <p>Strength Trainer</p>
+        </div>
+
+        <div class="card">
+            <h3>Usman</h3>
+            <p>Cardio Expert</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <p>Email: info@powergym.com</p>
+    <p>Phone: +92 300 1234567</p>
+</section>
+
+<footer class="footer">
+    © 2026 Power Gym
+</footer>
+
+</body>
+</html>
