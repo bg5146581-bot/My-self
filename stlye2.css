@@ -120,6 +120,18 @@ body{
     text-align: center;
     padding: 20px;
 }
+.grand-child:hover{
+    transform: scale(1.03);
+    box-sizing: 0 0 10px blue;
+    transition: 0.3s;
+
+}
+.card-child{
+     transform: scale(1.03);
+    box-sizing: 0 0 10px blue;
+    transition: 0.3s;
+
+}
 
 
 
