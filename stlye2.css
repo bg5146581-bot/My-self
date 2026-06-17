@@ -120,18 +120,26 @@ body{
     text-align: center;
     padding: 20px;
 }
+
 .grand-child:hover{
     transform: scale(1.03);
-    box-sizing: 0 0 10px blue;
+    box-shadow: 0 0 10px blue;
     transition: 0.3s;
 
 }
-.card-child{
+.card-child:hover{
      transform: scale(1.03);
-    box-sizing: 0 0 10px blue;
+    box-shadow: 0 0 10px blue;
     transition: 0.3s;
 
 }
+.nav ul li{
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.nav ul li:hover{
+    color: #2355cb;
+}
 
 
