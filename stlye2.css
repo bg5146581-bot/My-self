@@ -4,172 +4,122 @@
     margin: 0;
 }
 body{
-    background-color: #f4f4f4;
+    background-color: #f5f7fb;
     font-family: Arial, Helvetica, sans-serif;
+
 }
-.navbar{
+.header{
     background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 30px;
 }
-.navchild{
-    color: white;
-    padding: 10px;
+.nav{
+    color: #f5f7fb;
 }
-.navchild h2{
-    font-size: 34px;
-}
-.navchild ul{
-    list-style: none;
+.nav ul{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    list-style: none;
+    gap: 18px;
 }
 .section{
-    background-color: #2563eb;
-    width: 80%;
-    margin: 0 auto;
+    background-color: #2355cb;
+    width: 100%;
     height: 250px;
-    margin-top: 20px;
-    border-radius: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
-   
+    color: #f5f7fb;
+
 }
 .section h2{
-    font-size: 40px;
-    color: white;
-    word-spacing: 3px;
+    font-size: 45px;
+    word-spacing: 7px;
+    padding-bottom: 10px;
+
 }
 .section p{
-    padding-top: 10px;
-    color: aliceblue;
+    font-weight: bold;
 }
-.section button{
-    padding: 13px 22px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 10px;
+.about{
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 22px;
 }
-.About{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 18px;
+.begi{
+    width: 80%;
+    margin: 0 auto;
     background-color: #ffffff;
-    width: 80%;
-    height: 100px;
-    margin: 10px auto;
-    border-radius:10px ;
+   padding: 20px;
+   border-radius: 10px; 
+   margin-top: 15px;     
+
 }
-.About h2{
-    padding-bottom: 6px;
-}
-.Membership{
-    background-color:#ffffff ;
-    width: 80%;
-    height: 200px;
-    margin: 15px auto;
-    border-radius: 13px;
-}
-.mem{
-    padding-bottom: 10px;
-    padding-left: 20px;
-    font-size: 30px;
-  padding-top: 20px;
-  font-weight: bold;
+.skill{
+      text-align: center;
+    margin-top: 3rem;
+    font-size: 22px;
 }
 .card{
     display: flex;
     flex-direction: row;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
-     gap: 20px;
-     margin-top: 20px;
-     
+    margin-top: 20px;
 }
-.mem1{
-    background-color: #eff6ff;
-    width: 20%;
-    height: 80px;
-    padding: 20px;
-    border-radius: 20px;
+.card-child{
+    background-color: #e0e7ff;
+    width: 10%;
     text-align: center;
-}
-.mem1 h4{
+    padding: 8px;
+    border-radius:8px ;
     font-weight: bold;
 }
-.Membership2{
-    background-color:#ffffff ;
-    width: 80%;
-    height: 200px;
-    margin: 15px auto;
-    border-radius: 13px;
+.Projects{
+     text-align: center;
+    margin-top: 3rem;
+    font-size: 22px;
+
 }
-.mem3{
-    padding-bottom: 10px;
-    padding-left: 20px;
-    font-size: 30px;
-  padding-top: 20px;
-  font-weight: bold;
-}
-.card2{
+.project-child{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-     gap: 20px;
-     margin-top: 20px;
-     
+    gap: 20px;
+    margin-top: 20px;
 }
-.mem2{
-    background-color: #eff6ff;
+.grand-child{
+    background-color: #ffffff;
     width: 20%;
-    height: 80px;
+    border-radius: 13px;
     padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-}
-.mem2 h4{
-    font-weight: bold;
 }
 .Contact{
-    width: 80%;
-    background-color: #ffffff;
-    height: 120px;
-    margin: 10px auto;
+     text-align: center;
+    margin-top: 3rem;
+    font-size: 22px;
+
+}
+.email{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 16px;
-    padding: 10px;
-    padding-left: 16px;
-}
-.Contact h3{
-    font-weight:bold ;
-    font-size: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
 }
 .footer{
-    width: 100%;
-    height: 50px;
     background-color: black;
-    color: white;
+    color: #ffffff;
     text-align: center;
-    padding-top: 15px;
+    padding: 20px;
 }
-.mem1:hover{
-    transform: scale(1.07);
-    border-radius: 0 0 15px rgb(58, 55, 55);
-    transition: 0.3s;
-}
-.mem2:hover{
-    transform: scale(1.07);
-    border-radius: 0 0 15px rgb(58, 55, 55);
-    transition: 0.3s;
-}
+
+
+
