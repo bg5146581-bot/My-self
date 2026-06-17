@@ -10,7 +10,7 @@ body{
     background-color: #f4f4f4;
     font-family: Arial, Helvetica, sans-serif;
 }
-.navchil ul li{
+.navchild ul li a{
     text-decoration: none;
     color: white;
 }
