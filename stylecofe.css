@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+}
+.hero-section{
+    background-color: #2c1810;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+}
+.hero-child{
+    color: white;
+}
+.hero-child ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+
+}
+.hero-child ul li a{
+    text-decoration: none;
+    color: white;
+}
+.hero-child ul li a:hover{
+    color: #ffd700;
+    transition: 0.3s;
+}
+.NavBar{
+    background:url(./images/grafmex-coffee-3120750_1920.jpg);
+    height: 500px;
+    background-repeat: no-repeat;
+   background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.NavBar h2{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+}
+.NavBar p{
+    color: white;
+    padding-top: 10px;
+    font-size: 22px; 
+}
+.NavBar button{
+    padding: 12px 27px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: #ffd700;
+    cursor: pointer;
+}
+.NavBar button:hover{
+    background-color: white;
+    transition: 0.3s;
+}
+.our{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
+
+} 
+
+.Espresso{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.Espresso-child{
+    background-color: #ffffff;
+  
+   width: 20%;
+    border-radius: 10px;
+    padding: 10px 50px;
+    box-shadow: 0 0 10px rgb(173, 162, 162);
+    
+}
+.Espresso-child p{
+    padding-top:6px ;
+}
+.Espresso-child h3{
+    padding-top:10px ;
+}
+.Espresso-child:hover{
+    transform: scale(1.06);
+    transition: 0.3s;
+    
+}
+.Customer{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+} 
+.last-card{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    
+}
+.last-child{
+    background-color:#ffffff;
+    width: 40%;
+    padding: 20px;
+    border-radius: 8px;
+    padding-bottom: 10px;
+}
+.us{
+    display: flex;
+    flex-direction: column;
+    background-color:#ffffff ;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 30px auto;
+    border-radius: 15px;
+    padding: 25px;
+}
+.footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
