@@ -1,0 +1,234 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+.hero-section .container{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.hero-section{
+    background-color: #111111;
+ display: flex;
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 17px;
+}
+.hero-child ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.hero-child ul li a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.hero-child ul li a:hover{
+         color: #00ff88;
+}
+.hero-child button{
+    padding: 12px 18px;
+    border-radius:11px ;
+    border: none;
+    background-color: #00ff88;
+}
+.hero-child button:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+.navbar{
+    background:url(https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200) center/cover;
+    height: 600px;
+    background-repeat: no-repeat;
+   
+    color: white;
+
+}
+.navbar .container{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 600px;
+}
+.nav-child h1{
+    font-size: 55px;
+     animation:fadeIn 1s ease;
+}
+.nav-child p{
+    font-size: 20px;
+    padding-top: 10px;
+
+}
+.nav-child button{
+    padding: 12px 21px;
+    border-radius: 9px;
+    border: none;
+    background-color: #00ff88;
+    margin-top: 20px;
+}
+.nav-child button:hover{
+    transform: scale(1.05)
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.our{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 25px;
+    text-align: center;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.card-child{
+    background-color: #ffffff;
+    border-radius: 7px;
+    width: 40%;
+    text-align: center;
+    box-shadow: 0 0 15px rgb(167, 156, 156);
+    padding: 20px;
+    transition: 0.3s;
+}
+.card-child:hover{
+    transform: translateY(-8px);
+}
+.Pricing{
+    margin-top: 5rem;
+    text-align: center;
+    font-size:25px ;
+}
+.card2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.card2-child{
+    background-color: #ffffff;
+    border-radius: 7px;
+    width: 40%;
+    text-align: center;
+    box-shadow: 0 0 15px rgb(167, 156, 156);
+    padding: 20px;
+    transition: 0.3s;
+}
+.card2-child:hover{
+    transform: translateY(-8px);
+}
+.card2-child h3{
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+.card2-child h4{
+    padding-bottom: 8px;
+   font-weight: bolder;
+   font-size: 25px;
+
+}
+.contact{
+    color: white;
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+.contact button{
+    background-color: #00ff88;
+    padding: 12px 40px;
+    border: none;
+    border-radius:8px ;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.contact button:hover{
+    transform: scale(1.05);
+}
+.footer{
+    background-color: #000000;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+@media (min-width:280px) and (max-width:450px){
+    .hero-section .container{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+     .hero-child ul{
+        gap: 8px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+     }
+     .nav-child h1{
+        font-size: 30px;
+        
+     }
+     .navbar .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+
+     }
+     .navbar{
+        height: 400px;
+     }
+    .our{
+        font-size: 20px;
+    }
+    .card{
+        display: grid;
+        grid-template-columns: 1ref;
+    }
+    .card-child{
+        width: 100%;
+    }
+    .Pricing{
+        font-size: 20px;
+    }
+    .card2{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .card2-child{
+        width: 100%;
+        padding: 10px;
+     
+    }
+}
+
+
