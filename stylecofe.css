@@ -3,6 +3,11 @@
     padding: 0;
     margin: 0;
 }
+.container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f5f5f5;
@@ -13,6 +18,9 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+     z-index:100;
 
 }
 .hero-child{
@@ -34,7 +42,7 @@ body{
     transition: 0.3s;
 }
 .NavBar{
-    background:url(./images/grafmex-coffee-3120750_1920.jpg);
+    background:url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800");
     height: 500px;
     background-repeat: no-repeat;
    background-position: center;
@@ -100,15 +108,8 @@ body{
     padding-top:10px ;
 }
 .Espresso-child:hover{
-   
-    
-    transform: translateY(-5
-    px) scale(1.03);
-   
-
-    transition: 0.3s;
-   
-    
+    transform:scale(1.05);
+    transition: 0.3s;  
 }
 .Customer{
     text-align: center;
@@ -146,3 +147,69 @@ body{
     text-align: center;
     padding: 20px;
 }
+@media screen and (min-width: 200px) and (max-width:450px)  {
+    .hero-section{
+      flex-wrap: wrap;
+       justify-content: center;
+        align-items: center;
+       gap: 10px;     
+       
+        
+    }
+    .hero-child h2{
+        padding-bottom: 10px;
+
+    }
+    .hero-child ul{
+        padding-top: 10px;
+       
+    }
+    .NavBar{
+        text-align: center;
+    }
+    .NavBar h2{
+        font-size: 30px;
+    }
+    .NavBar p{
+        font-size: 15px;
+    }
+    .NavBar button{
+        padding: 10px 14px;
+    }
+    .our{
+        font-size: 19px;
+    }
+   .Espresso{
+   display: grid;
+   grid-template-columns: 1fr;
+   text-align: center;
+
+}
+    .Espresso-child{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+   .Customer{
+    font-size: 20px;
+   }
+    .last-card{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+       
+    }
+    .last-child{
+        width: 100%;
+        text-align: center;
+        
+    }
+    .last-child p{
+           padding-bottom: 10px;
+    }
+    .us{
+        width: 100%;
+    }
+    
+}
+

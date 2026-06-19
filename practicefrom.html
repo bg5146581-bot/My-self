@@ -1,232 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coffee Shop</title>
+<title>Gym Fitness Pro</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family: Arial;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f5f5f5;
-}
-
-.header{
-    background:#2c1810;
-    color:white;
+/* NAVBAR */
+.navbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
+    padding:15px 50px;
+    background:#111;
+    position:sticky;
+    top:0;
 }
 
-.nav ul{
+.logo{
+    color:#fff;
+    font-size:22px;
+}
+
+.navbar ul{
     display:flex;
-    list-style:none;
     gap:20px;
+    list-style:none;
 }
 
-.nav a{
+.navbar ul li a{
+    color:white;
     text-decoration:none;
-    color:white;
+    transition:0.3s;
 }
 
-.nav a:hover{
-    color:gold;
+.navbar ul li a:hover{
+    color:#00ff88;
 }
 
+.btn{
+    padding:10px 18px;
+    background:#00ff88;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* HERO */
 .hero{
-    background:url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200");
-    background-size:cover;
-    background-position:center;
-    height:500px;
-    color:white;
+    height:90vh;
+    background:url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200") center/cover;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    color:white;
 }
 
 .hero h1{
-    font-size:50px;
-    margin-bottom:10px;
+    font-size:55px;
+    animation:fadeIn 1s ease;
 }
 
 .hero p{
     font-size:20px;
-    margin-bottom:20px;
+    margin:10px 0;
 }
 
-.btn{
-    background:gold;
-    border:none;
-    padding:12px 25px;
-    border-radius:5px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.btn:hover{
-    background:white;
-}
-
-.section-title{
+/* SECTIONS */
+.section{
+    padding:60px 20px;
     text-align:center;
-    margin:40px 0 20px;
 }
 
-.menu{
+.title{
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
-    width:80%;
-    margin:auto;
 }
 
+/* CARD */
 .card{
     background:white;
     padding:20px;
-    text-align:center;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
 }
 
-.testimonials{
-    width:80%;
-    margin:40px auto;
-    display:flex;
-    gap:20px;
+/* PRICING */
+.price{
+    font-size:25px;
+    font-weight:bold;
+    margin:10px 0;
 }
 
-.review{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    flex:1;
-}
-
+/* CONTACT */
 .contact{
-    width:80%;
-    margin:40px auto;
-    background:white;
-    padding:20px;
-    text-align:center;
-    border-radius:10px;
-}
-
-.footer{
-    background:#2c1810;
+    background:#111;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:40px;
 }
 
-@media(max-width:768px){
-
-.header{
-    flex-direction:column;
-    gap:15px;
+/* FOOTER */
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:15px;
 }
 
-.menu{
-    grid-template-columns:1fr;
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
-.testimonials{
-    flex-direction:column;
-}
+/* RESPONSIVE */
+@media (max-width:768px){
 
-.hero h1{
-    font-size:35px;
-}
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="header">
-    <h2>Coffee House ☕</h2>
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">💪 FitGym Pro</div>
 
-    <div class="nav">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Trainers</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="btn">Join Now</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Build Your Body Strong</h1>
+    <p>Train Hard, Stay Fit, Never Quit</p>
+    <button class="btn">Get Started</button>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+    <h2 class="title">Our Services</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Weight Training</h3>
+            <p>Build strength and muscles</p>
+        </div>
+
+        <div class="card">
+            <h3>Cardio</h3>
+            <p>Improve stamina and fitness</p>
+        </div>
+
+        <div class="card">
+            <h3>Yoga</h3>
+            <p>Flexibility and peace of mind</p>
+        </div>
     </div>
-</div>
+</section>
 
-<div class="hero">
-    <h1>Best Coffee In Town</h1>
-    <p>Freshly Brewed Coffee Every Day</p>
-    <button class="btn">Order Now</button>
-</div>
+<!-- TRAINERS -->
+<section class="section">
+    <h2 class="title">Our Trainers</h2>
 
-<h2 class="section-title">Our Menu</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Ali Khan</h3>
+            <p>Strength Coach</p>
+        </div>
 
-<div class="menu">
+        <div class="card">
+            <h3>Sarah Ahmed</h3>
+            <p>Yoga Expert</p>
+        </div>
 
-    <div class="card">
-        <h3>Espresso</h3>
-        <p>$5</p>
+        <div class="card">
+            <h3>John Smith</h3>
+            <p>Cardio Trainer</p>
+        </div>
     </div>
+</section>
 
-    <div class="card">
-        <h3>Latte</h3>
-        <p>$6</p>
+<!-- PRICING -->
+<section class="section">
+    <h2 class="title">Pricing Plans</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Basic</h3>
+            <div class="price">$10</div>
+            <p>Gym Access</p>
+        </div>
+
+        <div class="card">
+            <h3>Standard</h3>
+            <div class="price">$20</div>
+            <p>Gym + Trainer</p>
+        </div>
+
+        <div class="card">
+            <h3>Premium</h3>
+            <div class="price">$30</div>
+            <p>All Access</p>
+        </div>
     </div>
+</section>
 
-    <div class="card">
-        <h3>Cappuccino</h3>
-        <p>$7</p>
-    </div>
-
-    <div class="card">
-        <h3>Mocha</h3>
-        <p>$8</p>
-    </div>
-
-</div>
-
-<h2 class="section-title">Customer Reviews</h2>
-
-<div class="testimonials">
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐
-        <p>Best coffee I've ever tasted.</p>
-    </div>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐
-        <p>Amazing atmosphere and service.</p>
-    </div>
-
-</div>
-
-<div class="contact">
+<!-- CONTACT -->
+<section class="contact">
     <h2>Contact Us</h2>
-    <p>coffeehouse@gmail.com</p>
+    <p>fitgym@gmail.com</p>
     <p>+92 300 1234567</p>
-</div>
+    <button class="btn">Send Message</button>
+</section>
 
-<div class="footer">
-    © 2026 Coffee House. All Rights Reserved.
-</div>
+<footer>
+    © 2026 FitGym Pro | All Rights Reserved
+</footer>
 
+</body>
+</html>
 </body>
 </html>
