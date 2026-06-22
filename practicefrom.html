@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 GameHub · full bari website</title>
+    <!-- All CSS is inside this file – no external stylesheets -->
+    <style>
+        /* ---------- RESET & BASE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0b0e1a 0%, #1a1f2f 100%);
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            color: #eef2ff;
+            line-height: 1.5;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        /* ---------- MAIN CONTAINER ---------- */
+        .game-hub {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(18, 23, 40, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
+            padding: 2.2rem 2.8rem 3.2rem;
+            box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.8), inset 0 1px 2px rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* ---------- HEADER / NAV ---------- */
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 2.8rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+
+        .logo span {
+            font-size: 2.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2.2rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #b9c4e6;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fbbf24;
+            border-bottom-color: #fbbf24;
+        }
+
+        .nav-cta {
+            background: #fbbf24;
+            color: #0b0e1a !important;
+            padding: 0.5rem 1.6rem !important;
+            border-radius: 40px;
+            font-weight: 600;
+            border-bottom: none !important;
+            transition: 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: #fcd34d;
+            transform: scale(1.02);
+            color: #0b0e1a !important;
+            border-bottom: none !important;
+        }
+
+        /* ---------- HERO SECTION ---------- */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e2643, #131b33);
+            padding: 2.8rem 3.2rem;
+            border-radius: 3rem;
+            margin-bottom: 3.5rem;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6), 0 10px 30px -10px #00000066;
+            border: 1px solid rgba(255, 215, 0, 0.08);
+        }
+
+        .hero-text {
+            flex: 1 1 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-text h1 em {
+            font-style: normal;
+            color: #fbbf24;
+            text-shadow: 0 0 20px #fbbf2440;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #b9c4e6;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #2a3457;
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #fbbf24;
+            border: 1px solid #fbbf2440;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-image {
+            flex: 0 0 180px;
+            text-align: center;
+            font-size: 6rem;
+            line-height: 1;
+            filter: drop-shadow(0 8px 20px #00000066);
+        }
+
+        /* ---------- SECTION TITLES ---------- */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title i {
+            font-size: 2rem;
+            color: #fbbf24;
+        }
+
+        .section-title small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #8892b0;
+            margin-left: 0.8rem;
+        }
+
+        /* ---------- GAME GRID (CARD) ---------- */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .game-card {
+            background: #1b233f;
+            border-radius: 2.2rem;
+            padding: 1.8rem 1.2rem 1.8rem;
+            text-align: center;
+            transition: 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: #fbbf2440;
+            box-shadow: 0 20px 40px -10px #000000cc, 0 0 0 1px #fbbf2430;
+            background: #212b4d;
+        }
+
+        .game-emoji {
+            font-size: 4.2rem;
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            filter: drop-shadow(0 4px 8px #00000055);
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #f0f4ff;
+        }
+
+        .game-card .genre {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #fbbf24;
+            background: #2a3457;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            border: 1px solid #fbbf2420;
+        }
+
+        .game-card p {
+            color: #aab3d6;
+            font-size: 0.95rem;
+            margin-bottom: 1.4rem;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            background: transparent;
+            border: 1.5px solid #fbbf24;
+            color: #fbbf24;
+            padding: 0.5rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: default;
+            transition: 0.2s;
+            width: fit-content;
+            background: rgba(251, 191, 36, 0.04);
+        }
+
+        .card-btn:hover {
+            background: #fbbf24;
+            color: #0b0e1a;
+            box-shadow: 0 0 20px #fbbf2440;
+        }
+
+        /* ---------- FEATURES / STATS ---------- */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.8rem;
+            background: #131b33;
+            padding: 2.2rem 2.2rem;
+            border-radius: 3rem;
+            margin-bottom: 3.5rem;
+            border: 1px solid #2a3457;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fbbf24;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            color: #8892b0;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- LATEST NEWS / SIDE BAR ---------- */
+        .news-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .news-main {
+            flex: 2 1 300px;
+            background: #121a30;
+            padding: 2rem 2.2rem;
+            border-radius: 2.5rem;
+            border: 1px solid #232d4a;
+        }
+
+        .news-main h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .news-item {
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #1f2847;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item .date {
+            color: #fbbf24;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .news-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0.2rem 0 0.2rem;
+        }
+
+        .news-item p {
+            color: #aab3d6;
+        }
+
+        .news-side {
+            flex: 1 1 200px;
+            background: #0f1629;
+            padding: 2rem 1.8rem;
+            border-radius: 2.5rem;
+            border: 1px solid #232d4a;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .news-side h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+        }
+
+        .side-link {
+            color: #b9c4e6;
+            text-decoration: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 40px;
+            background: #1b233f;
+            transition: 0.15s;
+            border-left: 4px solid #fbbf2440;
+        }
+
+        .side-link:hover {
+            background: #2a3457;
+            color: #fbbf24;
+            border-left-color: #fbbf24;
+            padding-left: 1.2rem;
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            margin-top: 3.5rem;
+            padding-top: 2.2rem;
+            border-top: 1px solid #232d4a;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.2rem;
+            color: #6b7a9e;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .footer-links a {
+            color: #8892b0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fbbf24;
+        }
+
+        .footer small {
+            font-size: 0.9rem;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 800px) {
+            .game-hub {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .hero-text h1 {
+                font-size: 2.6rem;
+            }
+            .hero-image {
+                font-size: 4.5rem;
+                margin-top: 0.5rem;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .nav-links {
+                gap: 0.8rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stats-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-hub">
+
+        <!-- ========== NAVBAR ========== -->
+        <header class="navbar">
+            <div class="logo">
+                <span>🎮</span> GameHub
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">News</a>
+                <a href="#">Leaderboard</a>
+                <a href="#" class="nav-cta">🔥 Play Now</a>
+            </div>
+        </header>
+
+        <!-- ========== HERO ========== -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Level up <em>your</em> <br>play time</h1>
+                <p>Discover the biggest collection of free browser games, from action to puzzles – all in one place.</p>
+                <span class="hero-badge">⭐ 10k+ active players</span>
+            </div>
+            <div class="hero-image">
+                🕹️
+            </div>
+        </section>
+
+        <!-- ========== GAME GRID ========== -->
+        <div class="section-title">
+            <span>🔥</span> Popular games <small>trending this week</small>
+        </div>
+
+        <div class="game-grid">
+            <!-- card 1 -->
+            <div class="game-card">
+                <div class="game-emoji">⚔️</div>
+                <h3>Shadow Quest</h3>
+                <span class="genre">RPG · adventure</span>
+                <p>Fight dark forces in an open world full of secrets.</p>
+                <span class="card-btn">Play now</span>
+            </div>
+            <!-- card 2 -->
+            <div class="game-card">
+                <div class="game-emoji">🏎️</div>
+                <h3>Turbo Drift</h3>
+                <span class="genre">racing · arcade</span>
+                <p>Drift through neon streets &amp; beat your best time.</p>
+                <span class="card-btn">Play now</span>
+            </div>
+            <!-- card 3 -->
+            <div class="game-card">
+                <div class="game-emoji">🧩</div>
+                <h3>Pixel Puzzle</h3>
+                <span class="genre">brain · logic</span>
+                <p>Relaxing puzzle game with 200+ levels.</p>
+                <span class="card-btn">Play now</span>
+            </div>
+            <!-- card 4 -->
+            <div class="game-card">
+                <div class="game-emoji">👾</div>
+                <h3>Astro Blaster</h3>
+                <span class="genre">shooter · retro</span>
+                <p>Defend the galaxy from alien invaders.</p>
+                <span class="card-btn">Play now</span>
+            </div>
+            <!-- card 5 -->
+            <div class="game-card">
+                <div class="game-emoji">🏰</div>
+                <h3>Kingdom Royale</h3>
+                <span class="genre">strategy · PvP</span>
+                <p>Build your empire and crush your rivals.</p>
+                <span class="card-btn">Play now</span>
+            </div>
+            <!-- card 6 -->
+            <div class="game-card">
+                <div class="game-emoji">🎯</div>
+                <h3>Dart Master</h3>
+                <span class="genre">sports · casual</span>
+                <p>Aim, throw, and hit the bullseye.</p>
+                <span class="card-btn">Play now</span>
+            </div>
+        </div>
+
+        <!-- ========== STATS SECTION ========== -->
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">1,280</div>
+                <div class="stat-label">Games</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24.7k</div>
+                <div class="stat-label">Active players</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">🏆</div>
+                <div class="stat-label">Daily tournaments</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">⭐ 4.9</div>
+                <div class="stat-label">Average rating</div>
+            </div>
+        </div>
+
+        <!-- ========== NEWS + SIDE ========== -->
+        <div class="news-section">
+            <div class="news-main">
+                <h2>📰 Latest news</h2>
+                <div class="news-item">
+                    <div class="date">JUN 21, 2026</div>
+                    <h4>Summer game fest: new updates</h4>
+                    <p>Massive content drop for Shadow Quest &amp; Kingdom Royale.</p>
+                </div>
+                <div class="news-item">
+                    <div class="date">JUN 18, 2026</div>
+                    <h4>Community tournament: $500 prize</h4>
+                    <p>Sign up now for the 2v2 arena battle this weekend.</p>
+                </div>
+                <div class="news-item">
+                    <div class="date">JUN 15, 2026</div>
+                    <h4>Mobile launch coming soon</h4>
+                    <p>Play your favorite games on the go – beta signups open.</p>
+                </div>
+            </div>
+            <div class="news-side">
+                <h3>⚡ Quick play</h3>
+                <a href="#" class="side-link">🎲 Random game</a>
+                <a href="#" class="side-link">🏅 Daily challenge</a>
+                <a href="#" class="side-link">👥 Multiplayer lobby</a>
+                <a href="#" class="side-link">🎁 Free rewards</a>
+                <a href="#" class="side-link">📊 Your stats</a>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer">
+            <small>© 2026 GameHub – full bari website, only HTML + CSS</small>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+                <a href="#">✨</a>
+            </div>
+        </footer>
+
+    </div> <!-- end game-hub -->
+</body>
+</html>

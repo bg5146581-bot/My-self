@@ -181,7 +181,7 @@ body{
     color: #ffffff;
     padding: 20px;
 }
-@media (min-width:280px) and (max-width:450px){
+@media (min-width:280px) and (max-width:600px){
     .hero-section .container{
         flex-wrap: wrap;
         justify-content: center;
@@ -212,7 +212,7 @@ body{
     }
     .card{
         display: grid;
-        grid-template-columns: 1ref;
+        grid-template-columns: 1fr;
     }
     .card-child{
         width: 100%;
